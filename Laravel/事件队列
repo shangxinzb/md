@@ -1,0 +1,42 @@
+### Laravel 5.8 事件系统官方文档
+
+```
+https://learnku.com/docs/laravel/5.8/events/3917#generating-events-and-listeners
+```
+
+
+
+### 简介
+
+```
+laravel 的事件提供了一种简单的观察者实现。它允许你在应用中进行订阅和监听事件。事件类通常都是存储在 `app/Events` 目录中，而他们的监听者都是存储在 `app/Listeners` 目录中。
+```
+
+
+
+### 配置监听
+
+```
+文件路径：app/Providers/EventServiceProvider.php
+
+protected $listen = [
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+        #事件名称=>['监听事件',...]
+        'App\Events\Log' => [
+            'App\Listeners\SaveLog',
+        ],
+    ];
+```
+
+
+
+
+
+
+
+
+
+
+
